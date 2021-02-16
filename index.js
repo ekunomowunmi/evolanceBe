@@ -35,7 +35,8 @@ http.createServer(function (req, res) { 
 
     app.use('/api',sellerRoute);
 
-    app.listen(3003, () => console.log('Server running'))
+    // app.listen(3003, () => console.log('Server running'))
+    app.listen('https://omowunmi-be.firebaseapp.com/', () => console.log('Server running'));
 
 
 console.log('May Node be with you')
