@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site":"omowunmi-be",
     "public": "public",
     "ignore": [
       "firebase.json",

@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "omowunmiproject"
+    "default": "omowunmiproject",
+    "be": "omowunmiproject"
   },
   "targets": {
     "omowunmiproject": {
