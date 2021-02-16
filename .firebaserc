@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "omowunmiproject"
+  },
+  "targets": {
+    "omowunmiproject": {
+      "hosting": {
+        "evolance": [
+          "evolancebe"
+        ]
+      }
+    }
   }
 }
