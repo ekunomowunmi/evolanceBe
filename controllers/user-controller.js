@@ -53,6 +53,7 @@ authenticate = (req,res) => {
             }
             return res.status(200).json(payload);
         }
+        else return res.status(400).json({incorrectPassword: 'Incorrect Password'})
     })
 }
 
