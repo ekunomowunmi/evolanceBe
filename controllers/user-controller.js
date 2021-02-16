@@ -44,7 +44,7 @@ authenticate = (req,res) => {
     User.findOne({email})
     .then(user => {
         if(!user){
-            return res.status(404).json({emailNotFound: 'Email not found'});
+            return res.status(404).json('Email not found');
         }
         if(password == user.password){
             const payload = {
@@ -53,7 +53,7 @@ authenticate = (req,res) => {
             }
             return res.status(200).json(payload);
         }
-        else return res.status(400).json({incorrectPassword: 'Incorrect Password'})
+        else return res.status(400).json('Incorrect Password')
     })
 }
 
