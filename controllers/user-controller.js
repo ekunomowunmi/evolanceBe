@@ -25,9 +25,12 @@ createAccount = (req,res) => {
 
             });
             newUser.save()
-            .then(user => res.json(user))
+            .then(user => {return res.status(200).json(user)})
             .catch(err => res.json(error))
         }
+    })
+    .catch(error => {
+        return res.status(400).json(error);
     });
 
 }
@@ -80,15 +83,19 @@ sendMailer = async (user, callBack) => {
         }
     })
     const mailOptions = {
-        from: `"Omowunmi", "omowunmiekun1@gmail.com"`,
-        to: `henry@evolancetechnologies.com`,
-        subject: "A user has been created",
-        html: `<h1>Lorem Ipsum</h1> <p>${user.firstName} ${user.lastName}</p>`
+        from: `"info@evolance.com"`,
+        to: `omowunmiekun1@gmail.com`,
+        subject: "New User Created",
+        html: `<h1>A user has been created</h1> 
+        <p><b>Name:</b> ${user.firstName} ${user.lastName}</p>
+        <p><b>Email Address: ${user.email}</b></p>
+        
+        <p>Please open the web portal to confirm</p>`
       };
       transporter.sendMail(mailOptions,callBack);
 }
 
-
+// henry@evolancetechnologies.com`,
 sendMail = async (req,res) => {
     let user = req.body;
     sendMailer(user,(err,info) => {
